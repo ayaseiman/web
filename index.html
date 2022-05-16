@@ -1,0 +1,121 @@
+<!DOCTYPE HTML>
+
+<head>
+	<title>Bolashaq vision Main Page</title>
+	<link href="mainpagecss.css" rel="stylesheet">
+	  <link type="image/x-icon" href="pictures/favicon.png" rel="shortcut icon">
+</head>
+
+<body>
+	<header Class="mainheader">
+		<nav Class="navigation mainnav">
+			<ul>
+				<li><a href="mainpage.html">Home</a></li>
+				<li><a href="registerpage.html">My account</a></li>
+				<li><a href="contacts.html">Contacts</a></li>
+				<li><a href="faq.html">FAQ</a></li>
+				<li><a href="price.html">Price-list</a></li>
+				<li><a href="aboutus.html">About us</a></li>
+			</ul>
+		</nav>
+		<br>
+		<h1 class="uniguide uniguidelarge">Welcome to Bolashaq vision!</h1>
+		<div class=log>
+			<img class="icon" src="pictures/personicon.png">
+			<br>
+		</div>
+	</header>
+	<div class="content">
+		<div class="filters" id="filterbuttons">
+			<button class="btn active" onclick="startfiltering('all')"> Show all</button>
+			<button class="btn" onclick="startfiltering('ivy')"> Ivy league</button>
+			<button class="btn" onclick="startfiltering('private')"> Private schools</button>
+			<button class="btn" onclick="startfiltering('public')"> Public schools</button>
+			<button class="btn" onclick="startfiltering('scholarships')"> Scholarships available</button>
+		</div>
+
+		<div class="container">
+			<div class="filter ivy"><a href="https://www.harvard.edu"><img class="pic" src="pictures/harvard.png"><br>
+					<p class="textblack">Harvard</p>
+				</a></div>
+			<div class="filter scholarships private"><a href="https://www.colgate.edu"><img class="pic" src="pictures/colgate.png"><br>
+					<p class="textblack">Colgate</p>
+				</a></div>
+			<div class="filter private"><a href="https://www.trincoll.edu"><img class="pic" src="pictures/trinity.png"><br>
+					<p class="textblack">Trinity College</p>
+				</a></div>
+			<div class="filter scholarships public"><a href="https://www.berkeley.edu"><img class="pic" src="pictures/berkeley.png"><br>
+					<p class="textblack">The University of California</p>
+				</a></div>
+			<div class="filter private"><a href="https://www.mit.edu"><img class="pic" src="pictures/mit.png"><br>
+					<p class="textblack">MIT</p>
+				</a></div>
+			<div class="filter scholarships private ivy"><a href="https://www.brown.edu"><img class="pic" src="pictures/brown.png"><br>
+					<p class="textblack">Brown</p>
+				</a></div>
+			<div class="filter ivy"><a href="https://www.cornell.edu"><img class="pic" src="pictures/cornell.png"><br>
+					<p class="textblack">Cornell</p>
+				</a></div>
+			<div class="filter ivy"><a href="https://www.princeton.edu"><img class="pic" src="pictures/princeton.png"><br>
+					<p class="textblack">Princeton</p>
+				</a></div>
+			<div class="filter public"><a href="https://www.ufl.edu"><img class="pic" src="pictures/florida.png"><br>
+					<p class="textblack">University of Florida</p>
+				</a></div>
+			<div class="filter scholarships ivy"><a href="https://www.yale.edu"><img class="pic" src="pictures/yale.png"><br>
+					<p class="textblack">Yale</p>
+				</a></div>
+			<div class="filter ivy"><a href="https://www.dartmouth.edu"><img class="pic" src="pictures/dartmouth.png"><br>
+					<p class="textblack">Dartmouth</p>
+				</a></div>
+		</div>
+
+		<script>
+			startfiltering("all")
+
+			function startfiltering(c) {
+				var x, i;
+				x = document.getElementsByClassName("filter");
+				if (c == "all") c = "";
+				for (i = 0; i < x.length; i++) {
+					hideclass(x[i], "show");
+					if (x[i].className.indexOf(c) > -1) showclass(x[i], "show");
+				}
+			}
+
+			function showclass(element, name) {
+				var i, array1, array2;
+				array1 = element.className.split(" ");
+				array2 = name.split(" ");
+				for (i = 0; i < array2.length; i++) {
+					if (array1.indexOf(array2[i]) == -1) {
+						element.className += " " + array2[i];
+					}
+				}
+			}
+
+			function hideclass(element, name) {
+				var i, array1, array2;
+				array1 = element.className.split(" ");
+				array2 = name.split(" ");
+				for (i = 0; i < array2.length; i++) {
+					while (array1.indexOf(array2[i]) > -1) {
+						array1.splice(array1.indexOf(array2[i]), 1);
+					}
+				}
+				element.className = array1.join(" ");
+			}
+			var buttonfilter = document.getElementById("filterbuttons");
+			var buttons = buttonfilter.getElementsByClassName("btn");
+			for (var i = 0; i < buttons.length; i++) {
+				buttons[i].addEventListener("click", function() {
+					var active = document.getElementsByClassName("active");
+					active[0].className = active[0].className.replace(" active", "");
+					this.className += " active";
+				});
+			}
+		</script>
+	<footer class="mainfooter">
+<a href = "https://www.instagram.com/astana_it_university/"><p>&copy; Copyright AAD</p></a>
+	</footer>
+</body>

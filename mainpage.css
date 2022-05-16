@@ -1,0 +1,217 @@
+* {
+  box-sizing: border-box;
+  font-family: Georgia;
+  color: #ffffff;
+}
+
+html, body {
+  padding: 0;
+  margin: 0;
+  background-color: #c6daf0;
+  color: black;
+}
+
+.navigation ul {
+  margin: 0;
+}
+
+.navigation li {
+  display: inline;
+}
+
+.navigation a {
+  display: inline-block;
+  padding: .5em;
+  text-decoration: none;
+}
+
+.mainnav {
+  text-align: center;
+  font-size: 2em;
+  font-weight: lighter;
+  border-bottom: 1px white;
+}
+
+.mainnav li {
+  padding: 0 5%;
+}
+
+.uniguide {
+  border-style: solid;
+  text-align: center;
+  border-radius: 8px;
+  font-size: 54px;
+  margin-top: 10px;
+  width: 50%;
+  margin: 0 auto;
+}
+
+.icon {
+  position: fixed;
+  right: -30px;
+  top: 80px;
+  display: inline-block;
+  vertical-align: center;
+  height: 80px;
+  width: 80px;
+  border-radius: 50%;
+  float: right;
+  margin-right: 40px;
+  border-style: solid;
+  background-color: #ffffff;
+}
+
+.log {
+  position: fixed;
+  right: 100px;
+  top: 90px;
+}
+
+.logreg {
+  text-align: center;
+  font-size: 30px;
+  color: #000000;
+}
+
+.login {
+  position: fixed;
+  right: 100px;
+  border-style: double;
+  background-color: #c6daf0;
+  border-radius: 4px;
+}
+
+.reg {
+  border-style: double;
+  background-color: #c6daf0;
+  border-radius: 4px;
+  color: #000000;
+}
+
+a:hover {
+  background-color: #1d3b5c;
+}
+
+.newaccount {
+  border-style: solid;
+  border-radius: 4px;
+  text-decoration: none;
+}
+
+.mainheader {
+  background-image: url("pictures/mainbackground.jpg");
+  background-color: rgba(29, 59, 92, 0.8);
+  background-blend-mode: multiply;
+  background-size: cover;
+  padding-bottom: 40px;
+}
+
+.content {
+  margin: 1em;
+}
+
+.mainfooter {
+  background-color: rgba(29, 59, 92, 0);
+  padding-bottom: 20px;
+  width: 100%;
+  height: 40px;
+}
+
+.filter {
+  float: left;
+  line-height: 15px;
+  text-align: center;
+  margin: 2px;
+  display: none;
+}
+
+.pic {
+  width: 200px;
+  height: 200px;
+  border-radius: 15px;
+  background-color: #ffffff;
+}
+
+.show {
+  display: block;
+}
+
+.container {
+  margin-top: 20px;
+  overflow: hidden;
+}
+
+.btn {
+  color: #1d3b5c;
+  border: none;
+  outline: none;
+  padding: 12px 16px;
+  background-color: #ffffff;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.btn:hover {
+  background-color: #1d3b5c;
+}
+
+.btn.active {
+  background-color: #1d3b5c;
+  color: white;
+}
+
+.filters {
+  text-align: center;
+}
+
+.textblack {
+  color: #1d3b5c;
+}
+
+label {
+  color: #1d3b5c;
+}
+
+.logo {
+  width: 100px;
+  height: 100px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.textcontacts {
+  color: #1d3b5c;
+  text-align: center;
+}
+
+.loginlink {
+  border-style: solid;
+  text-align: center;
+  border-radius: 8px;
+  font-size: 24px;
+  margin-top: 10px;
+  width: 10%;
+  margin: 0 auto;
+}
+
+.faq {
+  text-align: center;
+  font-size: 20px;
+}
+
+.faq li {
+  color: #1d3b5c;
+}
+
+.faq h1 {
+  color: #033e80;
+}
+
+.faq em {
+  color: #000000;
+}
+
+.price strong{
+  color: #000000;
+}

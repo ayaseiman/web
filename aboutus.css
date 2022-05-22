@@ -1,0 +1,48 @@
+@import url('./general.css');
+@import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Secular+One&display=swap');
+
+
+.fa-brands{
+  margin-left: 16px;
+}
+section{
+  overflow-y: inherit !important;
+}
+.swiper-title{
+  font-size: 1.8em;
+  text-align: center;
+  margin-bottom: .8em;
+}
+.swiper-container{
+  overflow: hidden;
+  position: relative;
+  margin-bottom: 3em;
+}
+.swiper-slide p{
+  max-width: 36em;
+  margin: 0 auto;
+}
+.slider-arrows{
+  margin-top: 2em;
+  display: flex;
+  justify-content: center;
+  column-gap: 1.4em;
+}
+.slider-arrow{
+  cursor: pointer;
+  border: 1px solid #FF0022;
+  height: 50px;
+  width: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.worktab .row .col-4{width: 100%}
+@media (max-width: 600px) {
+  .logos .col-3{flex: 0 1 47%}
+}
+footer{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}

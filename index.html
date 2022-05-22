@@ -1,121 +1,348 @@
 <!DOCTYPE HTML>
+<html lang="en">
 
 <head>
-	<title>Bolashaq vision Main Page</title>
-	<link href="mainpagecss.css" rel="stylesheet">
-	  <link type="image/x-icon" href="pictures/favicon.png" rel="shortcut icon">
+  <meta charset="utf-8">
+  <meta name="viewport" content="initial-scale = 1.0, width = device-width, maximum-scale = 1.0">
+
+  <title>Bolashaq vision Main Page</title>
+  <link href="index.css" rel="stylesheet">
+  <link type="image/x-icon" href="pictures/favicon.png" rel="shortcut icon">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <link rel="stylesheet" href="fontawesome-free-6.0.0-beta3-web/css/all.css">
 </head>
 
 <body>
-	<header Class="mainheader">
-		<nav Class="navigation mainnav">
-			<ul>
-				<li><a href="mainpage.html">Home</a></li>
-				<li><a href="registerpage.html">My account</a></li>
-				<li><a href="contacts.html">Contacts</a></li>
-				<li><a href="faq.html">FAQ</a></li>
-				<li><a href="price.html">Price-list</a></li>
-				<li><a href="aboutus.html">About us</a></li>
-			</ul>
-		</nav>
-		<br>
-		<h1 class="uniguide uniguidelarge">Welcome to Bolashaq vision!</h1>
-		<div class=log>
-			<img class="icon" src="pictures/personicon.png">
-			<br>
-		</div>
-	</header>
-	<div class="content">
-		<div class="filters" id="filterbuttons">
-			<button class="btn active" onclick="startfiltering('all')"> Show all</button>
-			<button class="btn" onclick="startfiltering('ivy')"> Ivy league</button>
-			<button class="btn" onclick="startfiltering('private')"> Private schools</button>
-			<button class="btn" onclick="startfiltering('public')"> Public schools</button>
-			<button class="btn" onclick="startfiltering('scholarships')"> Scholarships available</button>
-		</div>
+  <nav class="navigation mainnav navbar navbar-expand-lg navbar-light bg-primary bg-light as header">
+    <div class="container-fluid">
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="container">
+          <div class="navbar-nav">
+            <a class="nav-link" aria-current="page" href="index.html">Home</a>
+            <a class="nav-link" href="aboutus.html">About us</a>
+            <a class="nav-link" href="#">FAQ</a>
+            <a class="nav-link" href="price-list.html">Price-list</a>
+            <a class="nav-link" href="#contacts">Contact</a>
+            <a class="nav-link" href="#">My account</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
 
-		<div class="container">
-			<div class="filter ivy"><a href="https://www.harvard.edu"><img class="pic" src="pictures/harvard.png"><br>
-					<p class="textblack">Harvard</p>
-				</a></div>
-			<div class="filter scholarships private"><a href="https://www.colgate.edu"><img class="pic" src="pictures/colgate.png"><br>
-					<p class="textblack">Colgate</p>
-				</a></div>
-			<div class="filter private"><a href="https://www.trincoll.edu"><img class="pic" src="pictures/trinity.png"><br>
-					<p class="textblack">Trinity College</p>
-				</a></div>
-			<div class="filter scholarships public"><a href="https://www.berkeley.edu"><img class="pic" src="pictures/berkeley.png"><br>
-					<p class="textblack">The University of California</p>
-				</a></div>
-			<div class="filter private"><a href="https://www.mit.edu"><img class="pic" src="pictures/mit.png"><br>
-					<p class="textblack">MIT</p>
-				</a></div>
-			<div class="filter scholarships private ivy"><a href="https://www.brown.edu"><img class="pic" src="pictures/brown.png"><br>
-					<p class="textblack">Brown</p>
-				</a></div>
-			<div class="filter ivy"><a href="https://www.cornell.edu"><img class="pic" src="pictures/cornell.png"><br>
-					<p class="textblack">Cornell</p>
-				</a></div>
-			<div class="filter ivy"><a href="https://www.princeton.edu"><img class="pic" src="pictures/princeton.png"><br>
-					<p class="textblack">Princeton</p>
-				</a></div>
-			<div class="filter public"><a href="https://www.ufl.edu"><img class="pic" src="pictures/florida.png"><br>
-					<p class="textblack">University of Florida</p>
-				</a></div>
-			<div class="filter scholarships ivy"><a href="https://www.yale.edu"><img class="pic" src="pictures/yale.png"><br>
-					<p class="textblack">Yale</p>
-				</a></div>
-			<div class="filter ivy"><a href="https://www.dartmouth.edu"><img class="pic" src="pictures/dartmouth.png"><br>
-					<p class="textblack">Dartmouth</p>
-				</a></div>
-		</div>
+  <h1>Welcome to Bolashaq vision!</h1>
 
-		<script>
-			startfiltering("all")
+  <div class="container" id="buttons">
+    <div class="btn-group">
+      <button class="btn btn-outline-primary" onclick="startfiltering('all')"> Show all</button>
+      <button class="btn btn-outline-primary" onclick="startfiltering('ivy')"> Ivy league</button>
+      <button class="btn btn-outline-primary" onclick="startfiltering('private')"> Private schools</button>
+      <button class="btn btn-outline-primary" onclick="startfiltering('public')"> Public schools</button>
+      <button class="btn btn-outline-primary" onclick="startfiltering('scholarships')"> Scholarships available</button>
+    </div>
+  </div>
 
-			function startfiltering(c) {
-				var x, i;
-				x = document.getElementsByClassName("filter");
-				if (c == "all") c = "";
-				for (i = 0; i < x.length; i++) {
-					hideclass(x[i], "show");
-					if (x[i].className.indexOf(c) > -1) showclass(x[i], "show");
-				}
-			}
+  <section class="logos">
 
-			function showclass(element, name) {
-				var i, array1, array2;
-				array1 = element.className.split(" ");
-				array2 = name.split(" ");
-				for (i = 0; i < array2.length; i++) {
-					if (array1.indexOf(array2[i]) == -1) {
-						element.className += " " + array2[i];
-					}
-				}
-			}
+    <div class="container">
+      <div class="row">
+        <div class="col-md-2 col-sm-4 col-xs-1">
+          <div class="uni ivy">
+            <a href="https://www.harvard.edu"><img class="img-fluid" src="pictures/harvard.png"><br>
+              <p class="textblack">Harvard</p>
+            </a>
+          </div>
+        </div>
+        <div class="col-md-2 col-sm-4 col-xs-1">
+          <div class="uni scholarships private">
+            <a href="https://www.colgate.edu"><img class="img-fluid" src="pictures/colgate.png"><br>
+              <p class="textblack">Colgate</p>
+            </a>
+          </div>
+        </div>
+        <div class="col-md-2 col-sm-4 col-xs-1">
+          <div class="uni private">
+            <a href="https://www.trincoll.edu"><img class="img-fluid" src="pictures/trinity.png"><br>
+              <p class="textblack">Trinity College</p>
+            </a>
+          </div>
+        </div>
+        <div class="col-md-2 col-sm-4 col-xs-1">
+          <div class="uni scholarships public">
+            <a href="https://www.berkeley.edu"><img class="img-fluid" src="pictures/berkeley.png"><br>
+              <p class="textblack">The University of California</p>
+            </a>
+          </div>
+        </div>
+        <div class="col-md-2 col-sm-4 col-xs-1">
+          <div class="uni private">
+            <a href="https://www.mit.edu"><img class="img-fluid" src="pictures/mit.png"><br>
+              <p class="textblack">MIT</p>
+            </a>
+          </div>
+        </div>
+        <div class="col-md-2 col-sm-4 col-xs-1">
+          <div class="uni scholarships private ivy">
+            <a href="https://www.brown.edu"><img class="img-fluid" src="pictures/brown.png"><br>
+              <p class="textblack">Brown</p>
+            </a>
+          </div>
+        </div>
+        <div class="col-md-2 col-sm-4 col-xs-1">
+          <div class="uni ivy">
+            <a href="https://www.cornell.edu"><img class="img-fluid" src="pictures/cornell.png"><br>
+              <p class="textblack">Cornell</p>
+            </a>
+          </div>
+        </div>
+        <div class="col-md-2 col-sm-4 col-xs-1">
+          <div class="uni ivy">
+            <a href="https://www.princeton.edu"><img class="img-fluid" src="pictures/princeton.png"><br>
+              <p class="textblack">Princeton</p>
+            </a>
+          </div>
+        </div>
+        <div class="col-md-2 col-sm-4 col-xs-1">
+          <div class="uni public">
+            <a href="https://www.ufl.edu"><img class="img-fluid" src="pictures/florida.png"><br>
+              <p class="textblack">University of Florida</p>
+            </a>
+          </div>
+        </div>
+        <div class="col-md-2 col-sm-4 col-xs-1">
+          <div class="uni scholarships ivy">
+            <a href="https://www.yale.edu"><img class="img-fluid" src="pictures/yale.png"><br>
+              <p class="textblack">Yale</p>
+            </a>
+          </div>
+        </div>
+        <div class="col-md-2 col-sm-4 col-xs-1">
+          <div class="uni ivy">
+            <a href="https://www.dartmouth.edu"><img class="img-fluid" src="pictures/dartmouth.png"><br>
+              <p class="textblack">Dartmouth</p>
+            </a>
+          </div>
+        </div>
+        <div class="col-md-2 col-sm-4 col-xs-1">
+          <div class="uni ivy">
+            <a href="https://www.columbia.edu/"><img class="img-fluid" src="pictures/columbia.png"><br>
+              <p class="textblack">Columbia University</p>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
 
-			function hideclass(element, name) {
-				var i, array1, array2;
-				array1 = element.className.split(" ");
-				array2 = name.split(" ");
-				for (i = 0; i < array2.length; i++) {
-					while (array1.indexOf(array2[i]) > -1) {
-						array1.splice(array1.indexOf(array2[i]), 1);
-					}
-				}
-				element.className = array1.join(" ");
-			}
-			var buttonfilter = document.getElementById("filterbuttons");
-			var buttons = buttonfilter.getElementsByClassName("btn");
-			for (var i = 0; i < buttons.length; i++) {
-				buttons[i].addEventListener("click", function() {
-					var active = document.getElementsByClassName("active");
-					active[0].className = active[0].className.replace(" active", "");
-					this.className += " active";
-				});
-			}
-		</script>
-	<footer class="mainfooter">
-<a href = "https://www.instagram.com/astana_it_university/"><p>&copy; Copyright AAD</p></a>
-	</footer>
+    <script>
+      startfiltering("all")
+
+      function startfiltering(c) {
+        var x, i;
+        x = document.getElementsByClassName("uni");
+        if (c == "all") c = "";
+        for (i = 0; i < x.length; i++) {
+          hideclass(x[i], "show");
+          if (x[i].className.indexOf(c) > -1) showclass(x[i], "show");
+        }
+      }
+
+      function showclass(element, name) {
+        var i, array1, array2;
+        array1 = element.className.split(" ");
+        array2 = name.split(" ");
+        for (i = 0; i < array2.length; i++) {
+          if (array1.indexOf(array2[i]) == -1) {
+            element.className += " " + array2[i];
+          }
+        }
+      }
+
+      function hideclass(element, name) {
+        var i, array1, array2;
+        array1 = element.className.split(" ");
+        array2 = name.split(" ");
+        for (i = 0; i < array2.length; i++) {
+          while (array1.indexOf(array2[i]) > -1) {
+            array1.splice(array1.indexOf(array2[i]), 1);
+          }
+        }
+        element.className = array1.join(" ");
+      }
+
+      var buttonfilter = document.getElementById("buttons");
+      var buttons = buttonfilter.getElementsByClassName("btn");
+      for (var i = 0; i < buttons.length; i++) {
+        buttons[i].addEventListener("click", function() {
+          var active = document.getElementsByClassName("active");
+          active[0].className = active[0].className.replace("active", "");
+          this.className += " active";
+        });
+      }
+    </script>
+
+  </section>
+<br>
+  <section>
+    <div class="container">
+      <div class="row">
+        <h2 class="white-text"> Documentary terms and conditions</h2>
+      </div>
+
+      <div class="row">
+        <div class="col-md-4">
+          <p>Key Takeaways: To gain entry into an Ivy League school, your child will need multiple documents like academic mark sheets, certificates of competitive examinations, personal essay, proof of extracurricular activities and more.
+            <br>
+            (Some private colleges accept students without an entrance test, on the basis of the language certificate and the grades on the school leaving certificate).
+          </p>
+        </div>
+        <div class="col-md-8">
+          <p>One of the most crucial set of documents the admissions committee will look at is your child’s academic transcripts from high school. Consistent performance over the years gives the committee the confidence that your child has what it
+            takes to handle a rigorous curriculum. For instance, if you intend to apply to Ivy schools in the USA, you will need an excellent GPA or equivalent scores throughout your high school.
+            <br>
+            Another essential Ivy League admission requirement includes your child’s resume highlighting his/her academic achievements, language proficiency and standardised test scores. Also, do remember to add information about any extracurricular
+            activities that she or he may have participated in or any other skill that may set him/her apart from the competition. These may include any societies or clubs that she/he have been a part of, extracurricular competitions and skills
+            cultivated during student life.
+          </p>
+        </div>
+
+
+      </div>
+    </div>
+
+  </section>
+
+<section>
+<div class="container">
+  <div class="card-wrapper">
+    <div class="card" style="width: 18rem;">
+      <img class="card-img-top" src="pictures/person1.jpg" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">Berikbolov Asylkhan Syrkymovich</h5>
+        <p class="card-text">Working with students and entrants has helped me realise how valuable thoughtful, structured and timely advice is. Having successfully graduated from Nazarbayev Intellectual School of Chemistry and Biology in Almaty and having applied to 3 leading universities in the USA, I have gained much experience in the art of preparing university applications and I am happy to share the knowledge I have gained.</p>
+      </div>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">Studied at Astana IT University</li>
+        <li class="list-group-item">Supporting documents editor</li>
+      </ul>
+<!--      <div class="card-body">-->
+<!--        <a href="https://www.instagram.com/studyamerica/" class="btn btn-primary btn-lg" role="button" aria-disabled="true">Instagram</a>-->
+<!--        <a href="https://t.me/study_americabot" class="btn btn-secondary btn-lg" role="button" aria-disabled="true">Telegram</a>-->
+<!--      </div>-->
+    </div>
+    <div class="card" style="width: 18rem;">
+      <img class="card-img-top" src="pictures/person2.jpg" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">Suleimanova Ayana Serikovna </h5>
+        <p class="card-text">I am studying at AITU on a grant, previously I received invitations from leading universities of the country, as Chinese University of Hong Kong, City University, Hult University of Boston, Vienna University of Economics and Business, American University of Bulgaria, Luiss Guido Carli University of Rome, the Russian Academy of National Economy and Public Administration under the President of the Russian Federation. During the summer I was involved in helping graduating classes with admission and letter-writing.</p>
+      </div>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">Studied at Astana IT University</li>
+        <li class="list-group-item">Manager on Customer Service</li>
+      </ul>
+    </div>
+    <div class="card" style="width: 18rem;">
+      <img class="card-img-top" src="pictures/person3.jpg" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">Muktyar Dinmukhamed Hamiduly</h5>
+        <p class="card-text">Working in education for me is very attractive both for its relevance, as many of my acquaintances are on the verge of enrolment, and for its richness in terms of knowledge, experience that I can share with applicants. It is very motivating to be able to help applicants get into their dream university.</p>
+      </div>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">Studied at Astana IT University</li>
+        <li class="list-group-item">Overseas Education Consultant </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<br>
+<center>
+<h2 class="white-text">Sign up for the US Entry Helpful Materials Newsletter!</h2>
+</center>
+<form class="forma">
+  <div class="form-group row">
+      <label for="inputEmail3" class="col-sm-2 col-form-label">Email</label>
+    <div class="col-4">
+      <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
+    </div>
+  </div>
+  <div class="form-group row">
+    <label for="inputPassword3" class="col-sm-2 col-form-label">Name</label>
+    <div class="col-4">
+      <input type="password" class="form-control" id="inputPassword3" placeholder="Name">
+    </div>
+  </div>
+  <fieldset class="form-group">
+    <div class="row">
+      <legend class="col-form-label col-sm-2 pt-0">Your status</legend>
+      <div class="col-4">
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1" checked>
+          <label class="form-check-label" for="gridRadios1">
+            High school student
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2">
+          <label class="form-check-label" for="gridRadios2">
+            Graduate
+          </label>
+        </div>
+        <div class="form-check disabled">
+          <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios3" value="option3">
+          <label class="form-check-label" for="gridRadios3">
+            Student
+          </label>
+        </div>
+      </div>
+    </div>
+  </fieldset>
+  <div class="form-group row">
+    <div class="col-4">
+      <button type="submit" class="btn btn-primary ready-btn">Ready!</button>
+    </div>
+  </div>
+</form>
+  </section>
+<br>
+  <footer>
+    <section id="contacts">
+      <h1 class="white-text">Contact us!</h1>
+      <div class="container">
+        <div class="row">
+          <div class="col-4">
+            <img class="logo" src=pictures/mailru.png>
+            <a href="mailto: bolashaqvision@gmail.com">
+              <p class="textcontacts">Email</p>
+            </a>
+          </div>
+          <div class="col-4">
+            <img class="logo" src=pictures/instagram.png>
+            <a href="https://www.instagram.com/astana_it_university/">
+              <p class="textcontacts">Instagram</p>
+            </a>
+          </div>
+          <div class="col-4">
+            <img class="logo" src=pictures/whatsapp.png>
+            <a href="https://api.whatsapp.com/send?phone=77071222974">
+              <p class="textcontacts">WhatsApp</p>
+            </a>
+          </div>
+        </div>
+        <div class="row row-flex">
+          <div class="col">
+            <p>
+              Address: Sauran 46, Nur-Sultan, Kazakhstan; Telephone number: +7 (727)-333-23-23
+            </p>
+          </div>
+          <div class="audio-block">sound</div>
+        </div>
+      </div>
+    </section>
+    <a href="https://fontawesome.com/" class="fa-brands fa-font-awesome"> Made with font awesome</a>
+  </footer>
+  <script src="https://kit.fontawesome.com/89dd9cd09a.js" crossorigin="anonymous"></script>
+  <script src="script.js"></script>
 </body>
+
+</html>
